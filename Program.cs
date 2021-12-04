@@ -13,13 +13,13 @@ if (!string.IsNullOrEmpty(day))
 {
     int dayNumber = int.Parse(day);
 
-    IDayImplementation dayLogic = GetDay(dayNumber);
+    IDay dayLogic = GetDay(dayNumber);
     
     dayLogic.PartOne();
     dayLogic.PartTwo();
 }
 
-IDayImplementation GetDay(int dayNumber)
+IDay GetDay(int dayNumber)
 {
     switch (dayNumber)
     {

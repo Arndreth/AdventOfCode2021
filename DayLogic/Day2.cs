@@ -3,7 +3,7 @@ using System.IO;
 
 namespace AoC2021.DayLogic
 {
-    public class Day2 : BaseDay, IDayImplementation
+    public class Day2 : BaseDay, IDay
     {
         public void PartOne()
         {
