@@ -5,8 +5,12 @@ using System.IO;
 namespace AoC2021.DayLogic
 {
   
-    public abstract class BaseDay
+    public abstract class Day
     {
+        
+        public abstract void PartOne();
+
+        public abstract void PartTwo();
         internal string[] GetInputFromFile()
         {
             return File.ReadAllLines($"Inputs/{this.GetType().Name}.txt");

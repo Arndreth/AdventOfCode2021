@@ -3,9 +3,9 @@ using System.IO;
 
 namespace AoC2021.DayLogic
 {
-    public class Day2 : BaseDay, IDay
+    public class Day2 : Day
     {
-        public void PartOne()
+        public override void PartOne()
         {
             var input = GetInputFromFile();
 
@@ -33,7 +33,7 @@ namespace AoC2021.DayLogic
             Log($"Final Location is {location} at depth {depth}, final value is {location * depth}");
         }
 
-        public void PartTwo()
+        public override void PartTwo()
         {
             var input = GetInputFromFile();
 

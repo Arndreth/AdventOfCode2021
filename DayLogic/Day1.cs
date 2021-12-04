@@ -3,10 +3,10 @@ using System.IO;
 
 namespace AoC2021.DayLogic
 {
-    public class Day1 : BaseDay, IDay
+    public class Day1 : Day
     {
         
-        public void PartOne()
+        public override void PartOne()
         {
             var input = GetInputFromFile();
         
@@ -23,7 +23,7 @@ namespace AoC2021.DayLogic
             Log($"Depth Increases: {increased}");
         }
         
-        public void PartTwo()
+        public override void PartTwo()
         {
             var input = GetInputFromFile();
         

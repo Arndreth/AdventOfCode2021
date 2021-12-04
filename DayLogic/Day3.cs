@@ -5,9 +5,9 @@ using System.IO;
 
 namespace AoC2021.DayLogic
 {
-    public class Day3 : BaseDay, IDay
+    public class Day3 : Day
     {
-        public void PartOne()
+        public override void PartOne()
         {
             var input = GetInputFromFile();
             int bitCount = input[0].Trim().Length;
@@ -40,7 +40,7 @@ namespace AoC2021.DayLogic
             Log($"Final Power Output = {gamma * epsilon}");
         }
 
-        public void PartTwo()
+        public override void PartTwo()
         {
             var input = GetInputFromFile();
             

@@ -13,19 +13,19 @@ if (!string.IsNullOrEmpty(day))
 {
     int dayNumber = int.Parse(day);
 
-    IDay dayLogic = GetDay(dayNumber);
+    Day? dayLogic = GetDay(dayNumber);
     
-    dayLogic.PartOne();
-    dayLogic.PartTwo();
+    dayLogic?.PartOne();
+    dayLogic?.PartTwo();
 }
 
-IDay GetDay(int dayNumber)
+Day? GetDay(int dayNumber)
 {
-    switch (dayNumber)
+    var dayQualifier = Type.GetType($"AoC2021.DayLogic.Day{dayNumber}");
+    if (dayQualifier == null)
     {
-        case 1: return new Day1();
-        case 2: return new Day2();
-        case 3: return new Day3();
-        default: throw new Exception("No day found for {dayNumber}");
+        throw new Exception(
+            $"[AOC-Exception] Cannot create instance of type `Day{dayNumber}` as it hasn't been defined");
     }
+    return (Day)Activator.CreateInstance(dayQualifier)!;
 }
