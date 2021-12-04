@@ -11,9 +11,9 @@ namespace AoC2021.DayLogic
         public abstract void PartOne();
 
         public abstract void PartTwo();
-        internal string[] GetInputFromFile()
+        internal string[] GetInputFromFile(bool exampleData = false)
         {
-            return File.ReadAllLines($"Inputs/{this.GetType().Name}.txt");
+            return File.ReadAllLines(exampleData ? $"Inputs/ExampleInputs/{this.GetType().Name}Example.txt" : $"Inputs/{this.GetType().Name}.txt");
         }
 
         internal void Log(string message)
