@@ -6,7 +6,7 @@ using AoC2021.DayLogic;
 
 Console.WriteLine("*** AoC 2021 ***");
 
-Console.WriteLine("Which Day are you processing? ");
+Console.Write("Which Day are you processing? ");
 string? day = Console.ReadLine();
 
 if (!string.IsNullOrEmpty(day))
