@@ -99,8 +99,6 @@ namespace AoC2021.DayLogic.ExtraClasses
             Console.WriteLine($"Unscored Sum of numbers is {unscoredSum}");
             Console.WriteLine($"Last number drawn was {lastNumberDrawn}");
             
-            
-
             return unscoredSum * lastNumberDrawn;
         }
     }
