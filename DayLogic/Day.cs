@@ -20,7 +20,28 @@ namespace AoC2021.DayLogic
         {
             StackTrace stackTrace = new();
             var methodName = stackTrace.GetFrame(stackTrace.FrameCount - 2)?.GetMethod()?.Name;
-            Console.WriteLine($"[{this.GetType().Name}.{methodName}] {message}");
+            string msg = $"[{this.GetType().Name}.{methodName}] {message}";
+            if (msg.StartsWith('\r'))
+            {
+                Console.Write(msg);
+                return;
+            }
+            Console.WriteLine(msg);
+        }
+
+        internal void LogFormat(string message, params object[] msgParams)
+        {
+            StackTrace stackTrace = new();
+            var methodName = stackTrace.GetFrame(stackTrace.FrameCount - 2)?.GetMethod()?.Name;
+            bool rewriteLine = message.StartsWith('\r');
+            string msg = $"[{this.GetType().Name}.{methodName}] {String.Format(message.TrimStart('\r'), msgParams)}";
+            if (rewriteLine)
+            {
+                Console.Write($"\r{msg}");
+                return;
+            }
+            Console.WriteLine(msg);
+
         }
     }
 }
