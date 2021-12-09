@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace AoC2021.DayLogic
 {
@@ -32,6 +33,7 @@ namespace AoC2021.DayLogic
             Console.WriteLine($"Minimum Fuel {minFuel}");
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         int GenerateBurn(int delta)
         {
             delta = (int)MathF.Abs(delta);

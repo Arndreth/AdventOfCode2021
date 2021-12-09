@@ -7,7 +7,9 @@ namespace AoC2021.DayLogic
   
     public abstract class Day
     {
+        private string[] m_fileInput;
         
+
         public abstract void PartOne();
 
         public abstract void PartTwo();
