@@ -8,7 +8,7 @@ namespace AoC2021.DayLogic
     {
         private string openers = "[{(<";
 
-        private Dictionary<char, char> closers = new Dictionary<char, char>()
+        private Dictionary<char, char> closers = new()
         {
             {'{', '}'},
             {'(', ')'},
@@ -20,9 +20,7 @@ namespace AoC2021.DayLogic
         {
             var inputs = GetInputFromFile();
             
-            // Make a dict of string
             List<Stack<char>> incompleteLines = new();
-
             IDictionary<char, int> corruptedBits = new Dictionary<char, int>();
             
             // find invalid chunks
