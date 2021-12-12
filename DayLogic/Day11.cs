@@ -59,7 +59,6 @@ namespace AoC2021.DayLogic
     }
     public class Day11 : Day
     {
-        
         private int m_gridWidth = 0;
 
         private List<Octopus> m_Grid = new();
